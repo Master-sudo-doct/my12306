@@ -15,5 +15,6 @@
         <module>base</module>
         <module>convention</module>
         <module>bizs</module>
+        <module>designpattern</module>
     </modules>
 </project>

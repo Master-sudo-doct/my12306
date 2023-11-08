@@ -1,6 +1,5 @@
 package org.opengoofy.index12306.frameworks.starter.user.config;
 
-import org.apache.catalina.User;
 import org.opengoofy.index12306.frameworks.starter.user.core.UserTransmitFilter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;

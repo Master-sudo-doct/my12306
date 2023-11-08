@@ -2,12 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.my12306</groupId>
-    <artifactId>my12306-all</artifactId>
+
+    <groupId>org.opengoofy.index12306</groupId>
+    <artifactId>index12306-all</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>my12306</name>
     <packaging>pom</packaging>
-    <description>my12306</description>
+
+    <description>
+        🔥热门推荐🔥 大学春招、秋招、应届项目，SpringBoot3+Java17+SpringCloudAlibaba+RocketMQ等技术架构，完成12306用户+购票+订单服务，帮助学生主打就业的项目。
+    </description>
 
     <properties>
         <java.version>17</java.version>
@@ -37,8 +40,8 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.my12306</groupId>
-                <artifactId>my12306-dependencies</artifactId>
+                <groupId>org.opengoofy.index12306</groupId>
+                <artifactId>index12306-dependencies</artifactId>
                 <version>${project.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -115,5 +118,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

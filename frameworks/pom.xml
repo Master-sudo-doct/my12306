@@ -17,5 +17,11 @@
         <module>bizs</module>
         <module>designpattern</module>
         <module>common</module>
+        <module>cache</module>
+        <module>database</module>
+        <module>log</module>
+        <module>idempotent</module>
+        <module>distributedid</module>
+        <module>web</module>
     </modules>
 </project>

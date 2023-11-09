@@ -24,7 +24,7 @@ public class Result<T> implements Serializable {
     /**
      * 返回消息
      */
-    private String msg;
+    private String message;
     /**
      * 响应数据
      */

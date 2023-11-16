@@ -60,7 +60,10 @@ public enum UserRegisterErrorCodeEnum implements IErrorCode {
 
     VERIFY_STATE_NOTNULL("A006014", "审核状态不能为空"),
 
+    USER_DELETION_FAIL("A006015", "用户注销失败"),
+
     REAL_NAME_NOTNULL("A006015", "真实姓名不能为空");
+
 
     /**
      * 错误码

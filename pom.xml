@@ -14,8 +14,9 @@
         <spotless-maven-plugin.version>2.22.1</spotless-maven-plugin.version>
         <skip.checkstyle.check>true</skip.checkstyle.check>
         <maven-checkstyle-plugin.version>3.1.0</maven-checkstyle-plugin.version>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
     </properties>
-
     <modules>
         <module>dependencies</module>
         <module>frameworks</module>

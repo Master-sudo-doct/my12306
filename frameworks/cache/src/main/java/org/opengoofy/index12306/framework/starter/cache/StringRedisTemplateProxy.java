@@ -16,8 +16,6 @@
  */
 
 package org.opengoofy.index12306.framework.starter.cache;
-
-import com.alibaba.fastjson2.JSON;
 import com.google.common.collect.Lists;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -36,6 +34,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.scripting.support.ResourceScriptSource;
+import com.alibaba.fastjson2.JSON;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -45,7 +44,6 @@ import java.util.concurrent.TimeUnit;
  * 分布式缓存之操作 Redis 模版代理
  * 底层通过 {@link RedissonClient}、{@link StringRedisTemplate} 完成外观接口行为
  *
- * @公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料
  */
 @RequiredArgsConstructor
 public class StringRedisTemplateProxy implements DistributedCache {

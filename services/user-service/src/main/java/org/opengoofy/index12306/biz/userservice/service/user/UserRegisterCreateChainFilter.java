@@ -15,17 +15,21 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.userservice.enums;
+package org.opengoofy.index12306.biz.userservice.service.user;
+
+import org.opengoofy.index12306.biz.userservice.common.enums.UserChainMarkEnum;
+import org.opengoofy.index12306.biz.userservice.dto.req.UserRegisterReqDTO;
+import org.opengoofy.index12306.framework.starter.designpattern.chain.AbstractChainHandler;
 
 /**
- * 用户相关责任链 Mark 枚举
+ * 用户注册责任链过滤器
  *
  * @公众号：马丁玩编程，回复：加群，添加马哥微信（备注：12306）获取项目资料
  */
-public enum UserChainMarkEnum {
+public interface UserRegisterCreateChainFilter<T extends UserRegisterReqDTO> extends AbstractChainHandler<UserRegisterReqDTO> {
 
-    /**
-     * 用户注册过滤器
-     */
-    USER_REGISTER_FILTER
+    @Override
+    default String mark() {
+        return UserChainMarkEnum.USER_REGISTER_FILTER.name();
+    }
 }

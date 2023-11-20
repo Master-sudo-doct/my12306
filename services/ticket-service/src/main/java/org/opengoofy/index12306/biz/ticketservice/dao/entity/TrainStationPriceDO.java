@@ -15,18 +15,47 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice;
+package org.opengoofy.index12306.biz.ticketservice.dao.entity;
 
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
+import org.opengoofy.index12306.framework.starter.database.base.BaseDO;
 
-@SpringBootApplication
-@MapperScan("org.opengoofy.index12306.biz.ticketservice.dao.mapper")
+/**
+ * 列车站点价格实体
+ *
+ */
+@Data
+@TableName("t_train_station_price")
+public class TrainStationPriceDO extends BaseDO {
 
-public class TicketServiceApplication {
+    /**
+     * id
+     */
+    private Long id;
 
-    public static void main(String[] args) {
-        SpringApplication.run(TicketServiceApplication.class, args);
-    }
+    /**
+     * 车次id
+     */
+    private Long trainId;
+
+    /**
+     * 座位类型
+     */
+    private Integer seatType;
+
+    /**
+     * 出发站点
+     */
+    private String departure;
+
+    /**
+     * 到达站点
+     */
+    private String arrival;
+
+    /**
+     * 车票价格
+     */
+    private Integer price;
 }

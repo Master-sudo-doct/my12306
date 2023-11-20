@@ -15,18 +15,44 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice;
+package org.opengoofy.index12306.biz.ticketservice.dto.req;
 
-import org.mybatis.spring.annotation.MapperScan;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
-@SpringBootApplication
-@MapperScan("org.opengoofy.index12306.biz.ticketservice.dao.mapper")
+import java.util.Date;
 
-public class TicketServiceApplication {
+/**
+ * 车票分页查询请求参数
+ *
+ */
+@Data
+public class TicketPageQueryReqDTO extends Page {
 
-    public static void main(String[] args) {
-        SpringApplication.run(TicketServiceApplication.class, args);
-    }
+    /**
+     * 出发地
+     */
+    private String fromStation;
+
+    /**
+     * 目的地
+     */
+    private String toStation;
+
+    /**
+     * 出发日期
+     */
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date departureDate;
+
+    /**
+     * 出发站点
+     */
+    private String departure;
+
+    /**
+     * 到达站点
+     */
+    private String arrival;
 }

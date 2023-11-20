@@ -15,31 +15,33 @@
  * limitations under the License.
  */
 
-package org.opengoofy.index12306.biz.ticketservice;
+package org.opengoofy.index12306.biz.ticketservice.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import org.junit.jupiter.api.Test;
+import lombok.RequiredArgsConstructor;
 import org.opengoofy.index12306.biz.ticketservice.dto.req.TicketPageQueryReqDTO;
 import org.opengoofy.index12306.biz.ticketservice.dto.resp.TicketPageQueryRespDTO;
 import org.opengoofy.index12306.biz.ticketservice.service.TicketService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.opengoofy.index12306.framework.starter.convention.result.Result;
+import org.opengoofy.index12306.framework.starter.web.Results;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootTest
-class TicketServiceApplicationTests {
-    @Autowired
-    TicketService ticketService;
+/**
+ * 车票控制层
+ *
+ */
+@RestController
+@RequiredArgsConstructor
+public class TicketController {
 
-    @Test
-    void queryTickets() {
-        TicketPageQueryReqDTO ticketPageQueryReqDTO = new TicketPageQueryReqDTO();
-        ticketPageQueryReqDTO.setFromStation("北京");
-        ticketPageQueryReqDTO.setToStation("济南");
-        ticketPageQueryReqDTO.setArrival("济南西");
-        ticketPageQueryReqDTO.setDeparture("北京南");
-        IPage<TicketPageQueryRespDTO> ticketPageQueryRespDTOIPage =
-                ticketService.pageListTicketQuery(ticketPageQueryReqDTO);
-        System.out.println(ticketPageQueryRespDTOIPage.getRecords());
+    private final TicketService ticketService;
+
+    /**
+     * 根据条件查询车票
+     */
+    @GetMapping("/api/ticket-service/ticket/query")
+    public Result<IPage<TicketPageQueryRespDTO>> pageListTicketQuery(TicketPageQueryReqDTO requestParam) {
+        return Results.success(ticketService.pageListTicketQuery(requestParam));
     }
-
 }
